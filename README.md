@@ -1,6 +1,9 @@
 # video_thumbnail
 
-This plugin generates thumbnail from video file or URL.  It returns image in memory or writes into a file.  It offers rich options to control the image format, resolution and quality.  Supports iOS / Android / web.
+This plugin is based on [get_thumbnail_video](https://pub.dev/packages/get_thumbnail_video)
+- Includes fixes for memory leak issues in the base plugin which caused "MissingPluginException(No implementation found for method data on channel plugins.justsoft.xyz/video_thumbnail)" issue.
+
+- This plugin generates thumbnail from video file or URL.  It returns image in memory or writes into a file.  It offers rich options to control the image format, resolution and quality.  Supports iOS / Android / web.
 
 [![pub ver](https://img.shields.io/badge/pub-v0.6.1-blue)](https://pub.dev/packages/get_thumbnail_video)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/justsoft/)
