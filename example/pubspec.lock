@@ -128,13 +128,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get_thumbnail_video:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.6.2"
   http:
     dependency: transitive
     description:
@@ -420,6 +413,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  video_thumbnails:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.6.3"
   vm_service:
     dependency: transitive
     description:
