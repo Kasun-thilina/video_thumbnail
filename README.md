@@ -26,7 +26,7 @@ Warning:
 add [get_video_thumbnail](https://pub.dev/packages/get_video_thumbnail) as a dependency in your pubspec.yaml file.
 ```yaml
 dependencies:
-  get_video_thumbnail: ^0.6.3
+  get_video_thumbnail: ^0.6.4
 ```
 **import**
 ```dart
