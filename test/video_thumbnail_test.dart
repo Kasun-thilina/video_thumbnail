@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:video_thumbnails/src/image_format.dart';
-import 'package:video_thumbnails/video_thumbnail.dart';
+import 'package:get_video_thumbnail/src/image_format.dart';
+import 'package:get_video_thumbnail/video_thumbnail.dart';
 
 void main() {
   const channel = MethodChannel('video_thumbnail');

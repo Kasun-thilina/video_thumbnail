@@ -12,8 +12,8 @@ import 'dart:async';
 
 import 'package:cross_file/cross_file.dart';
 import 'package:flutter/services.dart';
-import 'package:video_thumbnails/src/image_format.dart';
-import 'package:video_thumbnails/src/video_thumbnail_platform.dart';
+import 'package:get_video_thumbnail/src/image_format.dart';
+import 'package:get_video_thumbnail/src/video_thumbnail_platform.dart';
 
 export 'package:cross_file/cross_file.dart' show XFile;
 
