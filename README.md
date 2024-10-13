@@ -30,7 +30,7 @@ dependencies:
 ```
 **import**
 ```dart
-import 'package:get_video_thumbnail/video_thumbnail.dart';
+import 'package:get_video_thumbnail/get_video_thumbnail.dart';
 
 ```
 **Generate a thumbnail in memory from video file**

@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get_video_thumbnail/get_video_thumbnail.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:get_video_thumbnail/index.dart';
-import 'package:get_video_thumbnail/video_thumbnail.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +91,7 @@ Future<ThumbnailResult> genThumbnail(ThumbnailRequest r) async {
       imageFormat: r.imageFormat,
       maxHeight: r.maxHeight,
       maxWidth: r.maxWidth,
-      timeMs: r.timeMs,
+      timeMs: 8500,
       quality: r.quality,
     );
   }
@@ -120,9 +120,9 @@ Future<ThumbnailResult> genThumbnail(ThumbnailRequest r) async {
 
 class GenThumbnailImage extends StatefulWidget {
   const GenThumbnailImage({
-    Key? key,
+    super.key,
     required this.thumbnailRequest,
-  }) : super(key: key);
+  });
   final ThumbnailRequest thumbnailRequest;
 
   @override
@@ -177,7 +177,7 @@ class _GenThumbnailImageState extends State<GenThumbnailImage> {
 }
 
 class DemoHome extends StatefulWidget {
-  const DemoHome({Key? key}) : super(key: key);
+  const DemoHome({super.key});
 
   @override
   State<DemoHome> createState() => _DemoHomeState();
@@ -341,39 +341,44 @@ class _DemoHomeState extends State<DemoHome> {
       appBar: AppBar(
         title: const Text('Thumbnail Plugin example'),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(2, 10, 2, 8),
-            child: TextField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                filled: true,
-                isDense: true,
-                labelText: 'Video URI',
-              ),
-              maxLines: null,
-              controller: _video,
-              focusNode: _editNode,
-              keyboardType: TextInputType.url,
-              textInputAction: TextInputAction.done,
-              onEditingComplete: _editNode.unfocus,
-            ),
-          ),
-          for (var i in settings) i,
-          Expanded(
-            child: Container(
-              color: Colors.grey[300],
-              child: ListView(
-                shrinkWrap: true,
-                children: <Widget>[
-                  if (_futureImage != null) _futureImage! else const SizedBox(),
-                ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(2, 10, 2, 8),
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  filled: true,
+                  isDense: true,
+                  labelText: 'Video URI',
+                ),
+                maxLines: null,
+                controller: _video,
+                focusNode: _editNode,
+                keyboardType: TextInputType.url,
+                textInputAction: TextInputAction.done,
+                onEditingComplete: _editNode.unfocus,
               ),
             ),
-          ),
-        ],
+            for (var i in settings) i,
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height * 0.4,
+              ),
+              child: Container(
+                color: Colors.grey[300],
+                child: ListView(
+                  shrinkWrap: true,
+                  children: <Widget>[
+                    if (_futureImage != null) _futureImage! else const SizedBox(),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
