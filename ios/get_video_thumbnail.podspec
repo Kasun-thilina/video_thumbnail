@@ -12,14 +12,14 @@ A new flutter plugin project.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
+  s.source_files = 'get_video_thumbnail/Sources/get_video_thumbnail/**/*.{h,m}'
+  s.public_header_files = 'get_video_thumbnail/Sources/get_video_thumbnail/include/**/*.h'
   s.pod_target_xcconfig = {
     'USER_HEADER_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/libwebp/**'
   }
   s.dependency 'Flutter'
   s.dependency 'libwebp'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
 end
 
