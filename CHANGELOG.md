@@ -1,3 +1,6 @@
+## 0.9.0
+* migrated web implementation from `dart:html` to `package:web` and updated SDK constraints
+
 ## 0.8.0
 * Added Swift Package Manager (SPM) support for iOS, alongside the existing CocoaPods support
 * Modernized the Android build to align with Flutter 3.44 standards: declarative Gradle plugins block, AGP 8.11.1, Gradle 8.14, Kotlin 2.2.20, and compileSdk 36
