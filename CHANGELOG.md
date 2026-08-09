@@ -1,3 +1,6 @@
+## 0.9.1
+* Fix web compile failure on newer Dart by replacing the `setRequestHeader` JS interop tear-off with an explicit closure
+
 ## 0.9.0
 * migrated web implementation from `dart:html` to `package:web` and updated SDK constraints
 
