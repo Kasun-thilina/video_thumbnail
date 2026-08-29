@@ -276,7 +276,9 @@ class VideoThumbnailWeb extends VideoThumbnailPlatform {
     final xhr = web.XMLHttpRequest()
       ..open('GET', videoSrc, true)
       ..responseType = 'blob';
-    headers.forEach(xhr.setRequestHeader);
+    headers.forEach((name, value) {
+      xhr.setRequestHeader(name, value);
+    });
 
     xhr.addEventListener(
       'load',
