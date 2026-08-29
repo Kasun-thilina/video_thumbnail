@@ -16,7 +16,6 @@ const Map<int, String> _kErrorValueToErrorName = <int, String>{
   2: 'MEDIA_ERR_NETWORK',
   3: 'MEDIA_ERR_DECODE',
   4: 'MEDIA_ERR_SRC_NOT_SUPPORTED',
-
 };
 
 // An error code value to description Map.
@@ -71,8 +70,7 @@ class VideoThumbnailWeb extends VideoThumbnailPlatform {
 
     return blobs
         .map(
-          (blob) =>
-              XFile(web.URL.createObjectURL(blob), mimeType: blob.type),
+          (blob) => XFile(web.URL.createObjectURL(blob), mimeType: blob.type),
         )
         .toList();
   }
@@ -139,8 +137,7 @@ class VideoThumbnailWeb extends VideoThumbnailPlatform {
   }) async {
     final completer = Completer<web.Blob>();
 
-    final video =
-        web.document.createElement('video') as web.HTMLVideoElement;
+    final video = web.document.createElement('video') as web.HTMLVideoElement;
     final timeSec = math.max(timeMs / 1000, 0);
     final fetchVideo = headers != null && headers.isNotEmpty;
 
@@ -161,8 +158,7 @@ class VideoThumbnailWeb extends VideoThumbnailPlatform {
         if (!completer.isCompleted) {
           final canvas =
               web.document.createElement('canvas') as web.HTMLCanvasElement;
-          final ctx =
-              canvas.getContext('2d')! as web.CanvasRenderingContext2D;
+          final ctx = canvas.getContext('2d')! as web.CanvasRenderingContext2D;
 
           if (maxWidth == 0 && maxHeight == 0) {
             canvas

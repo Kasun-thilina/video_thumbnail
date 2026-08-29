@@ -372,7 +372,10 @@ class _DemoHomeState extends State<DemoHome> {
                 child: ListView(
                   shrinkWrap: true,
                   children: <Widget>[
-                    if (_futureImage != null) _futureImage! else const SizedBox(),
+                    if (_futureImage != null)
+                      _futureImage!
+                    else
+                      const SizedBox(),
                   ],
                 ),
               ),

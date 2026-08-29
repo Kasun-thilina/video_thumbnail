@@ -1,14 +1,27 @@
-# video_thumbnail
+# get_video_thumbnail
 
 This plugin is based on [get_thumbnail_video](https://pub.dev/packages/get_thumbnail_video)
 - Includes fixes for memory leak issues in the base plugin which caused "MissingPluginException(No implementation found for method data on channel plugins.justsoft.xyz/video_thumbnail)" issue.
 
 - This plugin generates thumbnail from video file or URL.  It returns image in memory or writes into a file.  It offers rich options to control the image format, resolution and quality.  Supports iOS / Android / web.
 
-[![pub ver](https://img.shields.io/badge/pub-v0.6.1-blue)](https://pub.dev/packages/get_video_thumbnail)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/justsoft/)
+[![pub ver](https://img.shields.io/pub/v/get_video_thumbnail.svg)](https://pub.dev/packages/get_video_thumbnail)
+[![license](https://img.shields.io/github/license/Kasun-thilina/video_thumbnail.svg)](https://github.com/Kasun-thilina/video_thumbnail/blob/master/LICENSE)
 
-![video-file](https://github.com/justsoft/video_thumbnail/blob/master/video_file.png?raw=true) ![video-url](https://github.com/justsoft/video_thumbnail/blob/master/video_url.png?raw=true)
+![video-file](https://github.com/Kasun-thilina/video_thumbnail/blob/master/video_file.png?raw=true) ![video-url](https://github.com/Kasun-thilina/video_thumbnail/blob/master/video_url.png?raw=true)
+
+## Platform support
+
+|Platform|Supported|Notes|
+|--|--|--|
+|Android|✅|`MediaMetadataRetriever` based|
+|iOS|✅|CocoaPods and Swift Package Manager|
+|Web (JS / `dart2js`)|✅|`flutter build web`|
+|Web (WebAssembly / `dart2wasm`)|✅|`flutter build web --wasm`, since 0.9.0|
+
+The web implementation is built on `package:web` and `dart:js_interop`, so it compiles
+under both the JavaScript and the WebAssembly web targets. Versions before 0.9.0 used
+`dart:html` and could not be compiled with `--wasm`.
 
 ## Methods
 |function|parameter|description|return|
@@ -26,7 +39,7 @@ Warning:
 add [get_video_thumbnail](https://pub.dev/packages/get_video_thumbnail) as a dependency in your pubspec.yaml file.
 ```yaml
 dependencies:
-  get_video_thumbnail: ^0.6.4
+  get_video_thumbnail: ^0.9.1
 ```
 **import**
 ```dart
